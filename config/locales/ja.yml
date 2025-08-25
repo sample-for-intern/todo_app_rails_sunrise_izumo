@@ -1,0 +1,34 @@
+ja:
+  time:
+    formats:
+      short: "%Y/%m/%d"
+  activerecord:
+    models:
+      task: タスク
+    attributes:
+      task:
+        title: タイトル
+        completed: 完了
+        created_at: 作成日
+  tasks:
+    index:
+      title: Todoリスト
+      new_task: 新規タスク
+      operations: 編集
+    new:
+      title: 新規タスク登録
+    edit:
+      title: 編集
+    back: 一覧に戻る
+    show:
+      title: 詳細
+    destroy:
+      title: 削除
+      title_multiple: 削除
+      confirm: 本当に削除しますか？
+      confirm_multiple: 選択したタスクを本当に削除しますか？
+  helpers:
+    submit:
+      task:
+        create: 登録する
+        update: 更新する

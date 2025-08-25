@@ -1,0 +1,17 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+body {
+  background-color: #f4f7f6;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#tasks .task-item:last-child hr {
+  display: none;
+}

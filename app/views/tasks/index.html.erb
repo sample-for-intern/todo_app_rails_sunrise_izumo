@@ -1,0 +1,39 @@
+<div class="container" style="max-width: 800px;">
+  <%= form_with(url: destroy_multiple_tasks_path, method: :delete) do |form| %>
+    <div class="my-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0"><%= t('.title') %></h1>
+        <div class="btn-group">
+          <%= link_to new_task_path, class: "btn btn-dark me-2" do %>
+            <i class="bi bi-plus-lg"></i> <%= t('.new_task') %>
+          <% end %>
+          <%= form.submit t('tasks.destroy.title_multiple'), class: "btn btn-secondary", data: { turbo_confirm: t('tasks.destroy.confirm_multiple') } %>
+        </div>
+      </div>
+
+      <% if notice.present? %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-warning"><%= alert %></p>
+      <% end %>
+
+      <div class="bg-white rounded-3 shadow-sm overflow-hidden">
+        <table class="table table-bordered table-striped mb-0">
+          <thead class="table-light">
+            <tr>
+              <th scope="col" class="text-center" style="width: 5%;"></th>
+              <th scope="col" style="width: 5%;">No.</th>
+              <th scope="col"><%= t('activerecord.attributes.task.title') %></th>
+              <th scope="col" style="width: 20%;"><%= t('activerecord.attributes.task.created_at') %></th>
+              <th scope="col" style="width: 20%;"><%= t('.operations') %></th>
+            </tr>
+          </thead>
+          <tbody id="tasks">
+            <%= render @tasks %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

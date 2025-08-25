@@ -1,0 +1,17 @@
+<tr>
+  <td class="text-center">
+    <%= check_box_tag "task_ids[]", task.id, false, class: "form-check-input" %>
+  </td>
+  <th scope="row"><%= task_counter + 1 %></th>
+  <td>
+    <span class="<%= 'text-decoration-line-through text-muted' if task.completed? %>">
+      <%= task.title %>
+    </span>
+  </td>
+  <td><%= l task.created_at, format: :short %></td>
+  <td>
+    <div class="btn-group" role="group">
+      <%= link_to t('tasks.edit.title'), edit_task_path(task), class: "btn btn-sm btn-outline-secondary" %>
+    </div>
+  </td>
+</tr>

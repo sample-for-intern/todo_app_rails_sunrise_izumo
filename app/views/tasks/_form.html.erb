@@ -1,0 +1,28 @@
+<%= form_with(model: task, class: "card card-body") do |form| %>
+  <% if task.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= t('errors.template.header', count: task.errors.count, model: t('activerecord.models.task')) %></h2>
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <% unless task.new_record? %>
+    <div class="mb-3 form-check">
+      <%= form.check_box :completed, class: "form-check-input" %>
+      <%= form.label :completed, class: "form-check-label" %>
+    </div>
+  <% end %>
+
+  <div class="d-grid">
+    <%= form.submit class: "btn btn-dark" %>
+  </div>
+<% end %>
