@@ -22,7 +22,15 @@
     </div>
   <% end %>
 
-  <div class="d-grid">
+  <div class="mb-3">
+    <%= form.label :"青", class: "form-label" %>
+    <%= form.radio_button :color, :blue %>
+    <%= form.label :"赤", class: "form-label" %>
+    <%= form.radio_button :color, :red %>
+    <%= form.label :"緑", class: "form-label" %>
+    <%= form.radio_button :color, :green %>
+  </div>
+    <div class="d-grid">
     <%= form.submit class: "btn btn-dark" %>
   </div>
 <% end %>

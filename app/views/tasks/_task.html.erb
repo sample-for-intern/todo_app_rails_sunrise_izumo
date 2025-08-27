@@ -4,9 +4,23 @@
   </td>
   <th scope="row"><%= task_counter + 1 %></th>
   <td>
+  <% if task.color=="blue" %>
+    <span class="<%= 'text-decoration-line-through text-muted' if task.completed? %>" id="color" style="color: blue;">
+      <%= task.title %>
+    </span>
+    <% elsif task.color=="red" %>
+    <span class="<%= 'text-decoration-line-through text-muted' if task.completed? %>" id="color" style="color: red;">
+      <%= task.title %>
+    </span>
+    <% elsif task.color=="green" %>
+    <span class="<%= 'text-decoration-line-through text-muted' if task.completed? %>" id="color" style="color: green;">
+      <%= task.title %>
+    </span>
+    <% else %>
     <span class="<%= 'text-decoration-line-through text-muted' if task.completed? %>">
       <%= task.title %>
     </span>
+  <% end %>
   </td>
   <td><%= l task.created_at, format: :short %></td>
   <td>
