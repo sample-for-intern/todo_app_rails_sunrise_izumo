@@ -8,6 +8,8 @@ ja:
     attributes:
       task:
         title: タイトル
+        start_day: 開始予定日
+        end_day: 終了予定日
         completed: 完了
         created_at: 作成日
   tasks:

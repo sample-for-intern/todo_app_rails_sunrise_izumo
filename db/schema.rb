@@ -16,6 +16,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_27_020542) do
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_day"
+    t.date "end_day"
     t.string "color"
   end
 end
