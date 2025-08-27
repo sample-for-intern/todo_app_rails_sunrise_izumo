@@ -22,6 +22,16 @@
       </span>
     <% end %>
   </td>
+  <% if task.start_day.nil? %>
+  <td></td>
+  <% else %>
+  <td><%= l task.start_day,format: "%Y/%m/%d" %></td>
+  <% end %>
+  <% if task.end_day.nil? %>
+  <td></td>
+  <% else %>
+  <td><%= l task.end_day,format: "%Y/%m/%d" %></td>
+  <% end %>
   <td><%= l task.created_at, format: :short %></td>
   <td>
     <div class="btn-group" role="group">

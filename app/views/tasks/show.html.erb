@@ -4,7 +4,13 @@
   <div class="card shadow-sm">
     <div class="card-body">
       <h5 class="card-title mb-3"><%= @task.title %></h5>
-      <p class="card-text text-muted">
+      <p class="card-text text-muted ">
+        <%= t('activerecord.attributes.task.start_day') %>: <%= @task.start_day %>
+      </p>
+      <p class="card-text text-muted ">
+        <%= t('activerecord.attributes.task.end_day') %>: <%= @task.end_day %>
+      </p>
+      <p class="card-text text-muted ">
         <%= t('activerecord.attributes.task.created_at') %>: <%= l @task.created_at, format: :short %>
       </p>
 
