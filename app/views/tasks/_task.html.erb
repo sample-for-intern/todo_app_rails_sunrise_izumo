@@ -2,6 +2,9 @@
   <td class="text-center">
     <%= check_box_tag "task_ids[]", task.id, false, class: "form-check-input" %>
   </td>
+  <td class="text-center">
+    <%= check_box_tag "is_published","1", false, id: "my-checkbox" %>
+  </td>
   <th scope="row"><%= task_counter + 1 %></th>
   <td style="width: 200px; word-break: break-all; white-space: normal;">
     <% if task.color=="blue" %>
@@ -39,3 +42,31 @@
     </div>
   </td>
 </tr>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkbox = document.getElementById('my-checkbox');
+
+
+    // チェックボックスが存在するか確認
+    if (checkbox) {
+      // ページ読み込み時にlocalStorageから状態を復元
+      const savedState = localStorage.getItem('myCheckboxState');
+      if (savedState === 'checked') {
+  
+        checkbox.checked = true;
+      }
+
+      // チェックボックスの状態が変更されたらlocalStorageに保存
+      checkbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          // チェックが入ったら、"checked"という文字列を保存
+          localStorage.setItem('myCheckboxState', 'checked');
+        } else {
+          // チェックが外れたら、localStorageからキーを削除
+          localStorage.removeItem('myCheckboxState');
+        }
+      });
+    }
+  });
+</script>
