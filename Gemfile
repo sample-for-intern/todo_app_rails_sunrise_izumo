@@ -14,7 +14,7 @@ gem "rails-i18n"
 
 
 # Use the Puma web server
-gem "puma", "~> 6.4"
+gem "puma", "~> 7.0"
 
 # A Ruby wrapper for the popular Node.js library of the same name.
 

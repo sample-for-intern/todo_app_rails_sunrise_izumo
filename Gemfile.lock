@@ -200,7 +200,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (6.6.1)
+    puma (7.0.0)
       nio4r (~> 2.0)
     pwa (4.0.6)
       mozaic (~> 2.0)
@@ -351,7 +351,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
-  puma (~> 6.4)
+  puma (~> 7.0)
   pwa
   rails (~> 8.0.0.alpha)
   rails-i18n
